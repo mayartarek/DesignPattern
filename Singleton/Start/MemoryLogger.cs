@@ -14,7 +14,7 @@ namespace Singleton.Start
         // cli search for static instance of MemoryLogger and create a new instance if it doesn't exist in start 
 
         // eagr loading singleton pattern implementation at startup
-        private static  MemoryLogger _instance =new MemoryLogger();
+        private static  MemoryLogger _instance = new Lazy<MemoryLogger>(() => new MemoryLogger()).Value;
         private static readonly object _lock = new object();
         public static MemoryLogger Instance
         {
