@@ -11,23 +11,15 @@ namespace Singleton.Start
         private int _LogCount = 0;
         private int _errorCount = 0;
         private int _warningCount = 0;
-        private static  MemoryLogger _instance;
+        // cli search for static instance of MemoryLogger and create a new instance if it doesn't exist in start 
+
+        // eagr loading singleton pattern implementation at startup
+        private static  MemoryLogger _instance =new MemoryLogger();
         private static readonly object _lock = new object();
         public static MemoryLogger Instance
         {
             get
             {
-                if (_instance == null)
-                {
-                    lock (_lock)
-                    {
-                        if (_instance == null)
-                        {
-                            _instance = new MemoryLogger();
-                        }
-                    }
-                }
-              
                 return _instance;
             }
         }
