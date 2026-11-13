@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="Factory/Factory.csproj" Id="3ee7e5e8-c8f8-48ad-aea4-f65310578f87" />
   <Project Path="Singleton/Singleton.csproj" />
 </Solution>
